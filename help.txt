@@ -1,0 +1,33 @@
+# I was unable to see the freeking package in menuconfig, below is the sequence I used 
+Run:
+
+cd buildroot
+
+make BR2_EXTERNAL=../base_external menuconfig
+
+Then:
+
+Press / (search)
+
+Type aesd and hit Enter
+
+You should see BR2_PACKAGE_AESD_ASSIGNMENTS — press Enter
+
+Hit space to enable it [*]
+
+Save and exit
+
+# save it with the save-config.sh script, and then you will be able to see it
+
+nunezbenj@ubuntu20:~/sera/buildroot/assignment-4-nunezbenj$ tail buildroot/.config
+# BR2_TARGET_UBOOT_NETWORK is not set
+
+#
+# External options
+#
+
+#
+# AESD assignment package project_base (in /home/nunezbenj/sera/buildroot/assignment-4-nunezbenj/base_external)
+#
+BR2_PACKAGE_AESD_ASSIGNMENTS=y
+
